@@ -1,0 +1,126 @@
+
+# Task 1: Write a Python program to get and print the Python version you are using.
+import sys
+python_version = sys.version
+print("Python version:", python_version)
+
+# Task 2: Write a Python program to display the current date and time.
+from datetime import datetime
+current_datetime = datetime.now()
+print("Current date and time:", current_datetime)
+
+# Task 3: Write a Python program which accepts a sequence of comma-separated numbers from the user and generate a list and a tuple with those numbers.
+numbers = "1,2,3,4,5"  # Simulating input
+num_list = list(map(int, numbers.split(",")))
+num_tuple = tuple(num_list)
+print("List:", num_list)
+print("Tuple:", num_tuple)
+
+# Task 4: Write a Python program to accept a filename from the user and print the extension of that.
+filename = "example.txt"  # Simulating input
+file_extension = filename.split(".")[-1]
+print("File extension:", file_extension)
+
+# Task 5: Write a Python program to calculate the length of a string.
+user_string = "Hello World"
+string_length = len(user_string)
+print("Length of string:", string_length)
+
+# Task 6: Write a Python program to get a string made of the first 2 and the last 2 chars from a given string.
+def create_new_string(s):
+    if len(s) < 2:
+        return ""
+    return s[:2] + s[-2:]
+
+input_string = "avengers"
+task6_result = create_new_string(input_string)
+print("Result:", task6_result)
+
+# Task 7: Write a Python function to multiply all the numbers in a list.
+def multiply_numbers(numbers):
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
+
+numbers_list = [1, 2, 3, 4]
+task7_result = multiply_numbers(numbers_list)
+print("Product of all numbers:", task7_result)
+
+# Task 8: Write a Python function that accepts a string and calculates the number of upper case and lower case letters.
+def count_upper_lower(s):
+    upper = 0
+    lower = 0
+    for char in s:
+        if char.isupper():
+            upper += 1
+        elif char.islower():
+            lower += 1
+    return upper, lower
+
+task8_upper, task8_lower = count_upper_lower("CyberSecurity")
+print("Upper case letters:", task8_upper)
+print("Lower case letters:", task8_lower)
+
+# Task 9: Write a Python program that matches a string that has an 'a' followed by zero or more 'b's.
+import re
+def match_string(s):
+    pattern = r'a*b*'
+    return re.fullmatch(pattern, s)
+
+task9_result = bool(match_string("aabbb"))
+print("Regex match result:", task9_result)
+
+# Task 10: Write a Python script to check if a given key already exists in a dictionary.
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+key_to_check = "name"
+task10_result = key_to_check in my_dict
+print(f"Key '{key_to_check}' exists in dictionary:", task10_result)
+
+# Task 11: Write a Python program to iterate over dictionaries and print the keys and values.
+task11_result = [(key, value) for key, value in my_dict.items()]
+print("Dictionary items:", task11_result)
+
+# Task 12: Write a Python function to read and print the first n lines of a file.
+# Mocking file content
+file_content = "Line1\nLine2\nLine3\nLine4\nLine5\n".splitlines()
+def read_n_lines(n):
+    return file_content[:n]
+
+task12_result = read_n_lines(3)
+print("First 3 lines:", task12_result)
+
+# Task 13: Write a Python program to count the number of lines in a text file.
+def count_lines():
+    return len(file_content)
+
+task13_result = count_lines()
+print("Number of lines:", task13_result)
+
+# Task 14: Write a Python program to convert temperatures to and from Celsius and Fahrenheit.
+def celsius_to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5/9
+
+temp_c = 25
+temp_f = 77
+task14_c_to_f = celsius_to_fahrenheit(temp_c)
+task14_f_to_c = fahrenheit_to_celsius(temp_f)
+print(f"{temp_c}°C is {task14_c_to_f}°F")
+print(f"{temp_f}°F is {task14_f_to_c}°C")
+
+# Task 15: Write a function that takes a list and returns a string with items separated by a comma and a space, with 'and' before the last item.
+def format_list(items):
+    if len(items) > 1:
+        return ", ".join(items[:-1]) + ", and " + items[-1]
+    elif items:
+        return items[0]
+    else:
+        return ""
+
+my_list = ['ford', 'chevy', 'honda', 'dodge']
+task15_result = format_list(my_list)
+print("Formatted list:", task15_result)
+
